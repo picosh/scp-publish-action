@@ -10,5 +10,5 @@ jobs:
       - name: Publish to lists.sh
         uses: neurosnap/lists-publish-action@main
         with:
-          username: erock
+          user: erock
           key: ${{ secrets.PRIVATE_KEY }}
