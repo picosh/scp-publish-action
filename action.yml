@@ -1,0 +1,28 @@
+name: 'lists publish action'
+description: 'Action to publish posts to lists.sh'
+author: 'neurosnap'
+inputs:
+  user:
+    description: 'SSH User name'
+    required: true
+  key:
+    description: 'Private key'
+    required: true
+  src:
+    description: 'Sorce dir to deploy'
+    required: false
+    default: '*.txt'
+  host:
+    description: 'SSH address'
+    required: false
+    default: 'lists.sh'
+  port:
+    description: 'SSH Port'
+    required: false
+    default: 22
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+branding:
+  icon: 'upload-cloud'
+  color: 'blue'
