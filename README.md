@@ -1,6 +1,6 @@
-# SSH-SCP Deploy action
+# lists-publish-action
 
-Action to send  dist files to a remote server with  scp command
+Action to publish posts to [lists.sh](https://lists.sh)
 
 ## Required params
 
@@ -19,12 +19,12 @@ Action to send  dist files to a remote server with  scp command
 ## Example
 
 ```yml
-name: MasterCI
+name: ci
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -34,18 +34,10 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: Bucket actions
-        uses: actions/setup-node@v1
+      - name: publish to lists.sh
+        uses: neurosnap/lists-publish-action@main
         with:
-          node-version: 8
-      - run: npm i
-      - run: npm run test
-      - run: npm run generate
-      
-      - name: Publish
-        uses: nogsantos/scp-deploy@master
-        with:
-          src: ./dist/*
+          src: '*.txt'
           host: ${{ secrets.SSH_HOST }}
           port: ${{ secrets.SSH_PORT }}
           user: ${{ secrets.SSH_USER }}
