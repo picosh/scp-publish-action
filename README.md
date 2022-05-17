@@ -11,12 +11,16 @@ Action to publish posts to [lists.sh](https://lists.sh)
 
 - `src`: Source dir to deploy
 - `host`: SSH address
-- `remote`: Remote dir path
 - `port`: SSH Port
 
-### To publish
+## To publish
 
-## Example
+You will need to copy your ssh private key into a secret in your github repo.
+This means your key will be accessible from github.  It is highly recommended
+that you create a separate key specifically for github that way the private key
+will only have access to your [lists.sh](https://lists.sh) account if there is a breach on github.
+
+### Example
 
 ```yml
 name: ci
@@ -36,10 +40,10 @@ jobs:
 
       - name: publish to lists.sh
         uses: neurosnap/lists-publish-action@main
-        with:
+        with: 
+          user: erock 
+          key: ${{ secrets.PRIVATE_KEY }}
           src: '*.txt'
-          host: ${{ secrets.SSH_HOST }}
-          port: ${{ secrets.SSH_PORT }}
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
+          host: lists.sh 
+          port: 2323 
 ```
