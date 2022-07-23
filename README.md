@@ -1,6 +1,6 @@
-# lists-publish-action
+# scp-publish-action
 
-Action to publish posts to [lists.sh](https://lists.sh)
+Action to publish posts to [pico.sh](https://pico.sh) apps.
 
 ## Required params
 
@@ -18,7 +18,7 @@ Action to publish posts to [lists.sh](https://lists.sh)
 You will need to copy your ssh private key into a secret in your github repo.
 This means your key will be accessible from github.  It is highly recommended
 that you create a separate key specifically for github that way the private key
-will only have access to your [lists.sh](https://lists.sh) account if there is a breach on github.
+will only have access to your account if there is a breach on github.
 
 ### Example
 
@@ -38,12 +38,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
 
-      - name: publish to lists.sh
-        uses: neurosnap/lists-publish-action@main
+      - name: publish to prose
+        uses: neurosnap/scp-publish-action@main
         with: 
           user: erock 
           key: ${{ secrets.PRIVATE_KEY }}
           src: '*.txt'
-          host: lists.sh 
+          host: prose.sh 
           port: 2323 
 ```

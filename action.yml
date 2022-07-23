@@ -1,5 +1,5 @@
-name: 'lists publish action'
-description: 'Action to publish posts to lists.sh'
+name: 'scp publish action'
+description: 'Action to publish posts to pico.sh apps'
 author: 'neurosnap'
 inputs:
   user:
@@ -15,7 +15,7 @@ inputs:
   host:
     description: 'SSH address'
     required: false
-    default: 'lists.sh'
+    default: 'prose.sh'
   port:
     description: 'SSH Port'
     required: false
