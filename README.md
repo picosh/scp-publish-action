@@ -1,6 +1,5 @@
 > [!IMPORTANT]
-> [https://pico.sh/faq#how-can-i-use-git-to-sync-my-content](Use an rsync
-> github action instead)
+> [Use an rsync github action instead](https://pico.sh/faq#how-can-i-use-git-to-sync-my-content)
 
 # scp-publish-action
 
