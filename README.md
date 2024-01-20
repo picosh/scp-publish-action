@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+> [https://pico.sh/faq#how-can-i-use-git-to-sync-my-content](Use an rsync
+> github action instead)
+
 # scp-publish-action
 
 Action to publish posts to [pico.sh](https://pico.sh) apps.
